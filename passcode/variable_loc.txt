@@ -1,0 +1,4 @@
+buffer = 0xffffd4b8
+first = 0xffe90bc8
+sec = 0xffe90bcc
+
