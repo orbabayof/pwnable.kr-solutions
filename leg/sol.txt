@@ -1,0 +1,2 @@
+int fd = 0 so we read from stdin, so we can input for example 'A' * 10 
+and then password will be xor('A' * 10) = '@' * 10
